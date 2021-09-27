@@ -10,4 +10,8 @@ get 'sign_in', to: 'sessions#new'
 post 'sign_in', to: 'sessions#create'
 
 delete 'logout', to: 'sessions#destroy'
+
+get 'password', to: 'passwords#edit'
+patch 'password', to: 'passwords#update'
+
 end
