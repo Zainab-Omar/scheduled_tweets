@@ -1,4 +1,5 @@
 class PasswordResetsController < ApplicationController
+    
     def new
     end
 
@@ -10,5 +11,7 @@ class PasswordResetsController < ApplicationController
             redirect_to root_path, notice: "Reset link sent to your email"
         else
             redirect_to root_path, notice: "Invalid email"
+        end
     end
+
 end
