@@ -1,5 +1,5 @@
 class PasswordResetsController < ApplicationController
-    
+
     def new
     end
 
@@ -10,7 +10,7 @@ class PasswordResetsController < ApplicationController
             PasswordMailer.with(user: @user).reset.deliver_now
             redirect_to root_path, notice: "Reset link sent to your email"
         else
-            redirect_to root_path, notice: "Invalid email"
+            redirect_to root_path, alert: "Invalid email"
         end
     end
 
