@@ -1,6 +1,14 @@
 <h1>Resest your password</h1>
 
-<%= form_with url: password_reset_edit_path do |form| %>
+<%= form_with model: @user, url: password_reset_edit_path(token: params[:token]) do |form| %>
+
+    <% if @user.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+        <% @user.errors.full_messages.each do |err| %>
+        <div><%= err %></div>
+            <% end %>
+    </div>
+    <% end %>
 
     <div class="mb-3">
     <%= form.label :password %>
